@@ -5,15 +5,34 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   ROLES = %w[student instructor admin]
 
+  before_create :set_default_approval
+
+  def set_default_approval
+    if role.in?(["Instructor", "Admin"])
+      self.approved = false
+    elsif role == "Student"
+      self.approved = true
+    end
+  end
+
   def admin?
-    role == 'admin'
+    role == 'Admin'
   end
        
   def instructor?
-     role == 'instructor'
+     role == 'Instructor'
   end
        
   def student?
-    role == 'student'
+    role == 'Student'
+  end
+
+  def approved?
+    self.approved
+  end
+
+  def approve
+    self.approved = true;
+    save
   end
 end

@@ -1,8 +1,40 @@
-<h1>Home</h1>
 <div>
-    <%# user shouldn't be able to view this page at all if not signed w/ devise but just in case there is an if statement #%>  
-    <% if user_signed_in? %>
+    <%# user shouldn't be able to view this page at all if not signed w/ devise but just in case there is an if statement #%>
+    <% if !user_signed_in? %>
+        <p>Please sign in.</p>
+    <% elsif !current_user.approved? %>
+        <p>Your account must be approved by an administrator before you can access the website.</p>
+    <% else %>
+        <h1>Home</h1>
         <p>Your role is: <%= current_user.role %></p>
         <p>This is where the course table will go (I think)<p>
+
+        <% if current_user.admin? %>
+            <% if @users.count() > 0 %>
+                <h1>Pending Approvals</h1>
+                <table>
+                <thead>
+                    <tr>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @users.each do |user| %>
+                        <tr>
+                        <td><%= user.email %></td>
+                        <td><%= user.role %></td>
+                        <td>
+                            <%= link_to "Approve", approve_user_path(user), method: :get %>
+                        </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+                </table>
+            <% else %>
+                <p>No users pending approval.</p>
+            <% end %>
+        <% end %>
     <% end %>
 </div>
