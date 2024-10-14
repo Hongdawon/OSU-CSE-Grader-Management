@@ -1,2 +1,8 @@
 <h1>Home</h1>
-
+<div>
+    <%# user shouldn't be able to view this page at all if not signed w/ devise but just in case there is an if statement #%>  
+    <% if user_signed_in? %>
+        <p>Your role is: <%= current_user.role %></p>
+        <p>This is where the course table will go (I think)<p>
+    <% end %>
+</div>

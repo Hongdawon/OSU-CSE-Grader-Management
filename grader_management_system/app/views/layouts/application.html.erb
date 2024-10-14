@@ -26,7 +26,7 @@
         <% if user_signed_in? %>
           <%= link_to "Profile", edit_user_registration_path %>
           <%= button_to "Log out", destroy_user_session_path, method: :delete %>
-          <p>Your role is: <%= current_user.role %></p>
+          
         <% end %>
       </div>
       
