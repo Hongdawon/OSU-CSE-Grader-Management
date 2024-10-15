@@ -8,9 +8,9 @@ class User < ApplicationRecord
   before_create :set_default_approval
 
   def set_default_approval
-    if role.in?(["Instructor", "Admin"])
+    if role.in?(["Instructor", "Admin"]) && self.email != "admin@osu.edu"
       self.approved = false
-    elsif role == "Student"
+    else
       self.approved = true
     end
   end

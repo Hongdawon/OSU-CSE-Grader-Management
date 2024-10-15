@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "admin/reload"
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -14,4 +15,10 @@ Rails.application.routes.draw do
   root "home#index"
 
   get 'users/:id/approve', to: 'home#approve', as: 'approve_user'
+
+  get 'reload', to: 'admin#reload'
+  post 'reload_database', to: 'admin#reload_database'
+
+  get 'admin', to: 'admin#index'
+  get 'admin/approve/:id', to: 'admin#approve', as: 'admin_approve'
 end

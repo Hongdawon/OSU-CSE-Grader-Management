@@ -1,0 +1,27 @@
+<h1>Pending Approvals</h1>
+<% if @users.count() > 0 %>
+    <table>
+    <thead>
+        <tr>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+            <td><%= user.email %></td>
+            <td><%= user.role %></td>
+            <td>
+                <%= button_to 'Approve', admin_approve_path(user), method: :get %>
+            </td>
+            </tr>
+        <% end %>
+    </tbody>
+    </table>
+<% else %>
+    <p>No users pending approval.</p>
+<% end %>
+
+<%= link_to "Back", :back %>

@@ -7,34 +7,15 @@
     <% else %>
         <h1>Home</h1>
         <p>Your role is: <%= current_user.role %></p>
-        <p>This is where the course table will go (I think)<p>
 
         <% if current_user.admin? %>
-            <% if @users.count() > 0 %>
-                <h1>Pending Approvals</h1>
-                <table>
-                <thead>
-                    <tr>
-                    <th>Email</th>
-                    <th>Role</th>
-                    <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% @users.each do |user| %>
-                        <tr>
-                        <td><%= user.email %></td>
-                        <td><%= user.role %></td>
-                        <td>
-                            <%= link_to "Approve", approve_user_path(user), method: :get %>
-                        </td>
-                        </tr>
-                    <% end %>
-                </tbody>
-                </table>
-            <% else %>
-                <p>No users pending approval.</p>
-            <% end %>
+            <%= link_to "Admin Reload Db Page", admin_reload_path, method: :get %>
+            <br />
+            <%= link_to "Admin Approve Users Page", admin_path, method: :get %>
         <% end %>
+
+
+        <p>This is where the course table will go (I think)<p>
+        
     <% end %>
 </div>
