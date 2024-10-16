@@ -1,0 +1,67 @@
+<%= form_with(model: section) do |form| %>
+  <% if section.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
+
+      <ul>
+        <% section.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :courseId, style: "display: block" %>
+    <%= form.number_field :courseId %>
+  </div>
+
+  <div>
+    <%= form.label :sectionNumber, style: "display: block" %>
+    <%= form.text_field :sectionNumber %>
+  </div>
+
+  <div>
+    <%= form.label :instructionMode, style: "display: block" %>
+    <%= form.text_field :instructionMode %>
+  </div>
+
+  <div>
+    <%= form.label :location, style: "display: block" %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div>
+    <%= form.label :startTime, style: "display: block" %>
+    <%= form.text_field :startTime %>
+  </div>
+
+  <div>
+    <%= form.label :endTime, style: "display: block" %>
+    <%= form.text_field :endTime %>
+  </div>
+
+  <div>
+    <%= form.label :startDate, style: "display: block" %>
+    <%= form.text_field :startDate %>
+  </div>
+
+  <div>
+    <%= form.label :endDate, style: "display: block" %>
+    <%= form.text_field :endDate %>
+  </div>
+
+  <div>
+    <%= form.label :meetingDays, style: "display: block" %>
+    <%= form.text_field :meetingDays %>
+  </div>
+
+  <div>
+    <%= form.label :instructorName, style: "display: block" %>
+    <%= form.text_field :instructorName %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

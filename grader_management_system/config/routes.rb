@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :sections
+  resources :courses
+  get "admin/reload"
+  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -10,5 +14,13 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "home#index"
+
+  get 'users/:id/approve', to: 'home#approve', as: 'approve_user'
+
+  get 'reload', to: 'admin#reload'
+  post 'reload_database', to: 'admin#reload_database'
+
+  get 'admin', to: 'admin#index'
+  get 'admin/approve/:id', to: 'admin#approve', as: 'admin_approve'
 end
