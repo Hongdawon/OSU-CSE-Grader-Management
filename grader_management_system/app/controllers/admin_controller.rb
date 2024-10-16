@@ -37,56 +37,62 @@ class AdminController < ApplicationController
 
     if response.success?
       puts "API Request Success"
-      
+
+      # Clear course and section tables for repopulating
+      Course.delete_all
+      Section.delete_all
+
+
       data = response.parsed_response["data"] # get data from response
       classes_data = data["courses"] if data # get array of course objects from data
 
       if classes_data
-        num = 1
-        puts "Classes Data:"
         classes_data.each do |class_data|
           
           course = class_data["course"]
-          puts "#{num})"
-          puts "#{course["subject"]} #{course["catalogNumber"]} #{course["title"]}"
-          puts "#{course["term"]}) Credits: #{course["maxUnits"]} (id: #{course["courseId"]})" 
 
-          puts
-          puts "Sections:"
+          # Create a new Course record
+          new_course = Course.create!(
+            subject: course["subject"],
+            catalogNumber: course["catalogNumber"],
+            title: course["title"],
+            term: course["term"],
+            campus: course["campus"],
+            description: course["description"],
+            credits: course["maxUnits"]
+          )
+
+          # Store the generated Rails course_id for linking sections to course
+          course_id = new_course.id
+
+          # Process sections for the current course
           sections = class_data["sections"]
           sections.each do |indexedSection|
-            puts "#{indexedSection["section"]} #{indexedSection["instructionMode"]} (fk: #{indexedSection["courseId"]})"
             meeting = indexedSection["meetings"].first
             instructor = meeting["instructors"].first
-            puts "#{meeting["buildingDescription"]}, #{instructor["displayName"]}"
-            puts "#{meeting["startDate"]}-#{meeting["endDate"]}"
-            puts "#{meeting["startTime"]}-#{meeting["endTime"]}"
+
+            # Build the meetingDays string
             days = ""
-            if meeting["monday"] == true
-              days += "Monday "
-            end
-            
-            if meeting["tuesday"] == true
-              days += "Tuesday "
-            end
+            days += "Monday " if meeting["monday"]
+            days += "Tuesday " if meeting["tuesday"]
+            days += "Wednesday " if meeting["wednesday"]
+            days += "Thursday " if meeting["thursday"]
+            days += "Friday " if meeting["friday"]
 
-            if meeting["wednesday"] == true
-              days += "Wednesday "
-            end
-
-            if meeting["thursday"] == true
-              days += "Thursday "
-            end
-
-            if meeting["friday"] == true
-              days += "Friday "
-            end
-
-            puts "#{days}"
-            puts
+            # Create a new Section record associated with the course
+            Section.create!(
+              courseId: course_id,
+              sectionNumber: indexedSection["section"],
+              instructionMode: indexedSection["instructionMode"],
+              location: meeting["buildingDescription"],
+              startTime: meeting["startTime"],
+              endTime: meeting["endTime"],
+              startDate: meeting["startDate"],
+              endDate: meeting["endDate"],
+              meetingDays: days.strip, # Removes trailing spaces
+              instructorName: instructor["displayName"]
+            )
           end
-          puts
-          num = num + 1
         end
       else
         puts "No courses found in the API response."

@@ -10,7 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_14_193153) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_16_171719) do
+  create_table "courses", force: :cascade do |t|
+    t.string "subject"
+    t.string "catalogNumber"
+    t.string "title"
+    t.string "term"
+    t.string "campus"
+    t.string "description"
+    t.integer "credits"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.integer "courseId"
+    t.string "sectionNumber"
+    t.string "instructionMode"
+    t.string "location"
+    t.string "startTime"
+    t.string "endTime"
+    t.string "startDate"
+    t.string "endDate"
+    t.string "meetingDays"
+    t.string "instructorName"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
