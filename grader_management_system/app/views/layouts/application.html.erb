@@ -18,11 +18,17 @@
   </head>
   
   <body>
-    <!-- Header with a title, now aligned to the left, with a lighter green background -->
-    <header style="background-color: #3eb142; padding: 10px 20px; text-align: left; color: white;">
-      <h1 style="margin: 0; font-size: 20px;">CSE Grader Management Portal</h1>
-    </header>
+  <!-- Header with a title and OSU logo aligned to the left, side by side -->
+<header style="background-color: #3eb142; padding: 10px 20px; display: flex; justify-content: flex-start; align-items: center; color: white;">
+  <!-- OSU Logo on the left -->
+  <img src="<%= asset_path('osu-logo.png') %>" alt="OSU Logo" style="height: 40px; margin-right: 10px;">
+  
+  <!-- Title right next to the logo -->
+  <h1 style="margin: 0; font-size: 20px;">CSE Grader Management Portal</h1>
+</header>
 
+
+    
     <!-- Flash messages for Devise -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

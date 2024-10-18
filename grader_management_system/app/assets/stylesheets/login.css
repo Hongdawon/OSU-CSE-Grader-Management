@@ -170,8 +170,10 @@ button:hover {
 .signup-form label {
     display: block;
     font-weight: bold;
-    margin-bottom: 8px; /* Increase space between label and input */
-    margin-top: 15px;   /* Increase space between previous input and label */
+    margin-bottom: 8px;
+    /* Increase space between label and input */
+    margin-top: 15px;
+    /* Increase space between previous input and label */
 }
 
 /* Styling for input fields and select boxes */
@@ -180,8 +182,10 @@ button:hover {
 .signup-form input[type="text"],
 .signup-form select {
     width: 100%;
-    padding: 12px;        /* Increase padding inside input fields */
-    margin-bottom: 20px;  /* Add more space between input fields */
+    padding: 12px;
+    /* Increase padding inside input fields */
+    margin-bottom: 20px;
+    /* Add more space between input fields */
     border: 1px solid #ccc;
     border-radius: 4px;
 }
@@ -219,6 +223,7 @@ button:hover {
 .signup-form .extra-links a:hover {
     text-decoration: underline;
 }
+
 /* Style for the login page header */
 .login-header {
     font-size: 28px;
@@ -226,4 +231,20 @@ button:hover {
     text-align: center;
     margin-bottom: 30px;
     color: #333;
+}
+
+/* Header styling with OSU logo aligned to the right */
+header {
+    background-color: #3eb142;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+/* Style for OSU logo */
+header img {
+    height: 40px;
+    /* Adjust the size of the logo */
 }
