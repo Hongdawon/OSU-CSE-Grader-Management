@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reload Database</title>
-    <link rel="stylesheet" href="/.github/app/assets/stylesheets/reload_styling.css">
-</head>
-<body>
+<%= stylesheet_link_tag 'reload.css', media: 'all' %>
+
 <h1>Reload Database</h1>
 
 <%= form_with url: reload_database_path, method: :post do |f| %>
@@ -30,5 +23,3 @@
 <% end %>
 
 <%= link_to "Back", :back %>
-</body>
-</html>

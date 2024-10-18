@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pending Approvals</title>
-    <link rel="stylesheet" href="/.github/app/assets/stylesheets/pending_styling.css">
-</head>
-<body>
+<%= stylesheet_link_tag 'pending.css', media: 'all' %>
 
 <h1>Pending Approvals</h1>
 <% if @users.count() > 0 %>
@@ -35,5 +27,3 @@
 <% end %>
 
 <%= link_to "Back", :back %>
-</body>
-</html>
