@@ -219,3 +219,11 @@ button:hover {
 .signup-form .extra-links a:hover {
     text-decoration: underline;
 }
+/* Style for the login page header */
+.login-header {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
