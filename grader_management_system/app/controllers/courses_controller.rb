@@ -1,6 +1,9 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
 
+  # Rescue from ActiveRecord::RecordNotFound
+  rescue_from  ActiveRecord::RecordNotFound, with: :course_not_found
+
   # GET /courses or /courses.json
   def index
     @courses = Course.all
