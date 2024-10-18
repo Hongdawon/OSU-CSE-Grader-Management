@@ -13,47 +13,6 @@ body {
     padding: 20px;
 }
 
-/* Navbar styles */
-.navbar {
-    background-color: #3eb142;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Navbar links */
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    font-weight: bold;
-}
-
-/* Hover effect for navbar links */
-.navbar a:hover {
-    background-color: #45a049;
-}
-
-/* Branding style for the navbar */
-.navbar-brand {
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-}
-
-/* Container for navbar links */
-.navbar .nav-links {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-/* Spacing between navbar links */
-.navbar .nav-links li {
-    margin-right: 15px;
-}
 
 /* Styling for login form container */
 .login-form {
