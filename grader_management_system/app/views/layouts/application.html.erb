@@ -15,22 +15,37 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
   </head>
   
   <body>
+    <!-- Header with a title, now aligned to the left, with a lighter green background -->
+    <header style="background-color: #3eb142; padding: 10px 20px; text-align: left; color: white;">
+      <h1 style="margin: 0; font-size: 20px;">CSE Grader Management Portal</h1>
+    </header>
+
     <!-- Flash messages for Devise -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <div>
-        <% if user_signed_in? %>
-          <%= link_to "Profile", edit_user_registration_path %>
-          <%= button_to "Log out", destroy_user_session_path, method: :delete %>
-          
-        <% end %>
-      </div>
-      
+    <!-- Profile and Logout for signed in users -->
+    <div style="text-align: left; margin-top: 10px;">
+      <% if user_signed_in? %>
+        <%= link_to "Profile", edit_user_registration_path %>
+        <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    
+    <!-- Main content -->
     <%= yield %>
+
+    <!-- Footer -->
+    <footer style="background-color: #3eb142; padding: 10px; text-align: center; color: white; position: fixed; width: 100%; bottom: 0;">
+      © 2024 Welcome to the CSE Grader System
+    </footer>
   </body>
 </html>
+
+
+
+
+
