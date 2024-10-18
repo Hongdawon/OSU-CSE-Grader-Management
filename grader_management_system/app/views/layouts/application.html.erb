@@ -25,10 +25,15 @@
   <!-- Header with a title and OSU logo aligned to the left, side by side -->
 <header style="background-color: #3eb142; padding: 10px 20px; display: flex; justify-content: flex-start; align-items: center; color: white;">
   <!-- OSU Logo on the left -->
-  <img src="<%= asset_path('osu-logo.png') %>" alt="OSU Logo" style="height: 40px; margin-right: 10px;">
+  <img src="<%= asset_path('osu-logo.png') %>" alt="OSU Logo" style="height: 40px; margin-right: 10px; ">
   
   <!-- Title right next to the logo -->
-  <h1 style="margin: 0; font-size: 20px;">CSE Grader Management Portal</h1>
+  <h1 style="margin: 0; margin-right: 50px; font-size: 20px;">CSE Grader Management Portal</h1>
+  <% if user_signed_in? %>
+        <%= link_to "Home", root_path, class: "nav-button nav-item" %>
+        <%= link_to "Profile", edit_user_registration_path, class: "nav-item" %>
+        <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary nav-item" %>
+      <% end %>
 </header>
 
 
@@ -39,10 +44,7 @@
 
     <!-- Profile and Logout for signed in users -->
     <div style="text-align: left; margin-top: 10px;">
-      <% if user_signed_in? %>
-        <%= link_to "Profile", edit_user_registration_path %>
-        <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-      <% end %>
+      
     </div>
     
     <!-- Main content -->

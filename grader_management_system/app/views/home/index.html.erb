@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'home', media: 'all' %>
+
 <div>
     <%# user shouldn't be able to view this page at all if not signed w/ devise but just in case there is an if statement #%>
     <% if !user_signed_in? %>
@@ -6,16 +8,17 @@
         <p>Your account must be approved by an administrator before you can access the website.</p>
     <% else %>
         <h1>Home</h1>
-        <p>Your role is: <%= current_user.role %></p>
+
+        <br /><br /> <!-- Add two line breaks to bring the button down -->
+        <!-- Course Catalog button here -->
+        <%= link_to "Course Catalog", courses_path, class: "catalog-button" %>
+        <br />
 
         <% if current_user.admin? %>
-            <%= link_to "Admin Reload Db Page", admin_reload_path, method: :get %>
+            <%= link_to "Admin Reload Db Page", admin_reload_path, method: :get, class: "catalog-button" %>
             <br />
-            <%= link_to "Admin Approve Users Page", admin_path, method: :get %>
+            <%= link_to "Admin Approve Users Page", admin_path, method: :get, class: "catalog-button" %>
         <% end %>
-
-
-        <p>This is where the course table will go (I think)<p>
         
     <% end %>
 </div>

@@ -8,6 +8,11 @@
     align-items: center;
 }
 
+.nav-item {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 /* Navbar links */
 .navbar a {
     color: white;
