@@ -1,0 +1,84 @@
+/*pending approval page styling*/
+/* osu color themes */
+:root {
+    --osu-scarlet: #bb0000;
+    --osu-gray: #666666;
+    --osu-light-gray: #f1f1f1;
+    --osu-white: #ffffff;
+  }
+  
+  body {
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    background-color: var(--osu-light-gray);
+    color: var(--osu-gray);
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: var(--osu-scarlet);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--osu-white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  thead {
+    background-color: var(--osu-scarlet);
+    color: var(--osu-white);
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--osu-light-gray);
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+  
+  button, input[type="submit"] {
+    background-color: var(--osu-scarlet);
+    color: var(--osu-white);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover, input[type="submit"]:hover {
+    background-color: #990000;
+  }
+  
+  p {
+    background-color: var(--osu-white);
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--osu-scarlet);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+
+  
