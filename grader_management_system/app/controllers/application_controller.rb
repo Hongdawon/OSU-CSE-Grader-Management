@@ -35,4 +35,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, alert: 'You are not authorized to access this page.'
     end
   end
+  # Method to handle routing errors for non-existent pages
+  def route_not_found
+    render file: "#{Rails.root}/public/404.html", status: :not_found
+  end
 end

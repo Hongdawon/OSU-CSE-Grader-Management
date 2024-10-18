@@ -63,6 +63,12 @@ class CoursesController < ApplicationController
       @course = Course.find(params[:id])
     end
 
+    # Define what happens when a course is not foudn 
+    def course_not_found
+      # Redirect to courses index oage with an error message
+      redirect_to courses_path, alert: "Course not found."
+    end
+
     # Only allow a list of trusted parameters through.
     def course_params
       params.require(:course).permit(:subject, :catalogNumber, :title, :term, :campus, :description, :credits)

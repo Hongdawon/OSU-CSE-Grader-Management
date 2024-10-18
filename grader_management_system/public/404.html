@@ -51,6 +51,28 @@
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
+  .rails-default-error-page a {
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+    }
+
+    .rails-default-error-page a:hover {
+      text-decoration: underline;
+    }
+
+    .back-home {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .back-home:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 
@@ -60,6 +82,7 @@
     <div>
       <h1>The page you were looking for doesn't exist.</h1>
       <p>You may have mistyped the address or the page may have moved.</p>
+      <a href= "/" class="back-home">Go back to the home page</a>
     </div>
     <p>If you are the application owner check the logs for more information.</p>
   </div>
