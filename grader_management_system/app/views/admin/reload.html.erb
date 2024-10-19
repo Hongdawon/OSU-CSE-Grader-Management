@@ -1,23 +1,27 @@
-<h1>Reload Database</h1>
+<%= stylesheet_link_tag 'reload.css', media: 'all' %>
 
-<%= form_with url: reload_database_path, method: :post do |f| %>
-  Only CSE course information is fetched.
+<div class="reload-container">
+  <h1>Reload Database</h1>
+
+  <%= form_with url: reload_database_path, method: :post do |f| %>
+    Only CSE course information is fetched.
 
 
-  <div class="field">
-    <%= f.label :campus, "Campus" %>
-    <%= f.select :campus, options_for_select([['Columbus', 'col'], ['Lima', 'lma'], ['Mansfield', 'mns'], 
-    ['Marion', 'mrn'], ['Newark', 'nwk'], ['Wooster', 'wst']]), {}, class: "form-control" %>
-  </div>
+    <div class="field">
+      <%= f.label :campus, "Campus" %>
+      <%= f.select :campus, options_for_select([['Columbus', 'col'], ['Lima', 'lma'], ['Mansfield', 'mns'], 
+      ['Marion', 'mrn'], ['Newark', 'nwk'], ['Wooster', 'wst']]), {}, class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :semester, "Semester" %>
-    <%= f.select :semester, options_for_select([['Spring 2024', '1242'], ['Summer 2024', '1244'], ['Autumn 2024', '1248']]), {}, class: "form-control" %>
-  </div>
+    <div class="field">
+      <%= f.label :semester, "Semester" %>
+      <%= f.select :semester, options_for_select([['Spring 2024', '1242'], ['Summer 2024', '1244'], ['Autumn 2024', '1248']]), {}, class: "form-control" %>
+    </div>
 
-  <div>
-    <%= f.submit "Reload Database" %>
-  </div>
-<% end %>
+    <div>
+      <%= f.submit "Reload Database" %>
+    </div>
+  <% end %>
 
-<%= link_to "Back", :back %>
+  <%= link_to "Back", :back %>
+</div>

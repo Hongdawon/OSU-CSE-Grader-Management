@@ -1,0 +1,74 @@
+/* reload page styling/*
+/* osu color themes */
+:root {
+    --osu-scarlet: #bb0000;
+    --osu-gray: #666666;
+    --osu-light-gray: #f1f1f1;
+    --osu-white: #ffffff;
+  }
+  
+  body {
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    background-color: var(--osu-light-gray);
+    color: var(--osu-gray);
+    line-height: 1.6;
+    /* padding: 20px; */
+  }
+  
+  .reload-container h1 {
+    color: var(--osu-scarlet);
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .reload-container form {
+    background-color: var(--osu-white);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reload-container .field {
+    margin-bottom: 20px;
+  }
+  
+  .reload-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .reload-container .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--osu-gray);
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  .reload-container input[type="submit"] {
+    background-color: var(--osu-scarlet);
+    color: var(--osu-white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reload-container input[type="submit"]:hover {
+    background-color: #990000;
+  }
+  
+  .reload-container a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--osu-scarlet);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .reload-container a:hover {
+    text-decoration: underline;
+  }
