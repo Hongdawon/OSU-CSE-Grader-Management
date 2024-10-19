@@ -12,42 +12,42 @@
     background-color: var(--osu-light-gray);
     color: var(--osu-gray);
     line-height: 1.6;
-    padding: 20px;
+    /* padding: 20px; */
   }
   
-  h1 {
+  .approval-container h1 {
     color: var(--osu-scarlet);
     font-size: 2.5em;
     margin-bottom: 20px;
   }
   
-  table {
+  .approval-container table {
     width: 100%;
     border-collapse: collapse;
     background-color: var(--osu-white);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  thead {
+  .approval-container thead {
     background-color: var(--osu-scarlet);
     color: var(--osu-white);
   }
   
-  th, td {
+  .approval-container th, .approval-container td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid var(--osu-light-gray);
   }
   
-  tr:last-child td {
+  .approval-container tr:last-child td {
     border-bottom: none;
   }
   
-  tr:nth-child(even) {
+  .approval-container tr:nth-child(even) {
     background-color: #f8f8f8;
   }
   
-  button, input[type="submit"] {
+  .approval-container button, .approval-container input[type="submit"] {
     background-color: var(--osu-scarlet);
     color: var(--osu-white);
     border: none;
@@ -57,18 +57,18 @@
     transition: background-color 0.3s ease;
   }
   
-  button:hover, input[type="submit"]:hover {
+  .approval-container button:hover, .approval-container input[type="submit"]:hover {
     background-color: #990000;
   }
   
-  p {
+  .approval-container p {
     background-color: var(--osu-white);
     padding: 15px;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  a {
+  .approval-container a {
     display: inline-block;
     margin-top: 20px;
     color: var(--osu-scarlet);
@@ -76,7 +76,7 @@
     font-weight: bold;
   }
   
-  a:hover {
+  .approval-container a:hover {
     text-decoration: underline;
   }
   

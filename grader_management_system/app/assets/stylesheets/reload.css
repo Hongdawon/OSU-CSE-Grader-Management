@@ -12,33 +12,33 @@
     background-color: var(--osu-light-gray);
     color: var(--osu-gray);
     line-height: 1.6;
-    padding: 20px;
+    /* padding: 20px; */
   }
   
-  h1 {
+  .reload-container h1 {
     color: var(--osu-scarlet);
     font-size: 2.5em;
     margin-bottom: 20px;
   }
   
-  form {
+  .reload-container form {
     background-color: var(--osu-white);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  .field {
+  .reload-container .field {
     margin-bottom: 20px;
   }
   
-  label {
+  .reload-container label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
   }
   
-  .form-control {
+  .reload-container .form-control {
     width: 100%;
     padding: 10px;
     border: 1px solid var(--osu-gray);
@@ -46,7 +46,7 @@
     font-size: 16px;
   }
   
-  input[type="submit"] {
+  .reload-container input[type="submit"] {
     background-color: var(--osu-scarlet);
     color: var(--osu-white);
     padding: 10px 20px;
@@ -57,11 +57,11 @@
     transition: background-color 0.3s ease;
   }
   
-  input[type="submit"]:hover {
+  .reload-container input[type="submit"]:hover {
     background-color: #990000;
   }
   
-  a {
+  .reload-container a {
     display: inline-block;
     margin-top: 20px;
     color: var(--osu-scarlet);
@@ -69,6 +69,6 @@
     font-weight: bold;
   }
   
-  a:hover {
+  .reload-container a:hover {
     text-decoration: underline;
   }
