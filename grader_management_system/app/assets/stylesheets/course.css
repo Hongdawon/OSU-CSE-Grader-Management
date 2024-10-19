@@ -13,7 +13,7 @@
   }
   
   /* Course title styling */
-  .course-title {
+  .course-number {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -30,9 +30,10 @@
     font-weight: bold;
     font-size: 14px;
   }
-  
+
+
   /* Styling for catalog number, term, campus, and description */
-  .course-catalog-number,
+  .course-title,
   .course-term,
   .course-campus,
   .course-description {

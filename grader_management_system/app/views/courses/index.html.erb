@@ -1,8 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<!-- <p style="color: green"><%= notice %></p> --->
 
 <% content_for :title, "Courses" %>
 
 <h1>Courses</h1>
+
+<% if current_user.admin? %>
+  <%= link_to "New course", new_course_path %>
+<% end %>
 
 <div id="courses">
   <% @courses.each do |course| %>
@@ -15,4 +19,4 @@
   <% end %>
 </div>
 
-<%= link_to "New course", new_course_path %>
+

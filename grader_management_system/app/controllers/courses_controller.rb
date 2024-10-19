@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
+  before_action :require_admin, :only => [:edit, :update, :destroy, :create, :new]
 
   # Rescue from ActiveRecord::RecordNotFound
   rescue_from  ActiveRecord::RecordNotFound, with: :course_not_found
@@ -76,5 +77,13 @@ class CoursesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def course_params
       params.require(:course).permit(:subject, :catalogNumber, :title, :term, :campus, :description, :credits)
+    end
+    
+    def require_admin
+      unless current_user.admin?
+        flash[:notice] = "You don't have access to this action"
+        redirect_to courses_path
+        return false
+      end
     end
 end
