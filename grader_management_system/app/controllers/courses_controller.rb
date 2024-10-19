@@ -11,6 +11,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/1 or /courses/1.json
   def show
+    @sections = Section.where(courseId: @course.id) # Fetch all sections for the course
   end
 
   # GET /courses/new

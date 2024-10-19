@@ -9,3 +9,8 @@
 
   <%= button_to "Destroy this course", @course, method: :delete %>
 </div>
+
+<h2>Sections for this course:</h2>
+<% @sections.each do |section| %>
+  <%= render section %>
+<% end %>
