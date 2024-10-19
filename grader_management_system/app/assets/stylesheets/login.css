@@ -86,7 +86,7 @@
 }
 
 /* General button styling */
-button {
+.btn button {
     background-color: #3cda5e;
     color: white;
     padding: 10px 20px;
@@ -98,7 +98,7 @@ button {
 }
 
 /* Hover effect for buttons */
-button:hover {
+.btn button:hover {
     background-color: #38cc3f;
 }
 
