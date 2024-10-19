@@ -14,6 +14,7 @@
 </div>
 
 <h2>Sections for this course:</h2>
+<%= link_to "New section", new_section_path(courseId: @course.id) %>
 <% @sections.each do |section| %>
   <%= render section %>
 <% end %>
