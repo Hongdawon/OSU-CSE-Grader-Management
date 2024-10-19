@@ -1,8 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @course %>
+<div class="course-container">
 
-<div>
+  <%= render @course %>
+
   <%= link_to "Edit this course", edit_course_path(@course) %> |
   <%= link_to "Back to courses", courses_path %>
 

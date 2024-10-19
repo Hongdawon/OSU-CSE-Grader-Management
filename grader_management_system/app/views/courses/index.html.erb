@@ -6,10 +6,12 @@
 
 <div id="courses">
   <% @courses.each do |course| %>
-    <%= render course %>
-    <p>
-      <%= link_to "Show this course", course %>
-    </p>
+    <div class="course-container">
+      <%= render course %>
+      <p>
+        <%= link_to "Show this course", course %>
+      </p>
+    </div>
   <% end %>
 </div>
 
