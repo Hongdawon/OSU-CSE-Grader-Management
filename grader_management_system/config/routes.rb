@@ -23,4 +23,7 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'admin#index'
   get 'admin/approve/:id', to: 'admin#approve', as: 'admin_approve'
+
+  #Catch-all route to handle 404 for non-existent pages 
+  match '*unmatched', to: 'home#route_not_found', via: :all
 end

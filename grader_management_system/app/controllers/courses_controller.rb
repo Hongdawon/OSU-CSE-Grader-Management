@@ -1,6 +1,9 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
 
+  # Rescue from ActiveRecord::RecordNotFound
+  rescue_from  ActiveRecord::RecordNotFound, with: :course_not_found
+
   # GET /courses or /courses.json
   def index
     @courses = Course.all
@@ -61,6 +64,12 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
+    end
+
+    # Define what happens when a course is not foudn 
+    def course_not_found
+      # Redirect to courses index oage with an error message
+      redirect_to courses_path, alert: "Course not found."
     end
 
     # Only allow a list of trusted parameters through.

@@ -1,6 +1,9 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: %i[ show edit update destroy ]
 
+  # Rescue from ActiveRecord::RecordNotFound when a section is not found
+  rescue_from ActiveRecord::RecordNotFound, with: :section_not_found
+
   # GET /sections or /sections.json
   def index
     @sections = Section.all
@@ -62,6 +65,11 @@ class SectionsController < ApplicationController
     def set_section
       @section = Section.find(params[:id])
     end
+    # Handle cases where the section is not found
+    def section_not_found
+      redirect_to sections_path, alert: "Section not found."
+    end
+
 
     # Only allow a list of trusted parameters through.
     def section_params
