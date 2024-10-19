@@ -46,3 +46,22 @@
     margin-right: 15px;
 }
 
+.nav-item-custom {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    background: none;
+    border: none;
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.nav-item-custom button {
+    color: white;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+

@@ -32,9 +32,9 @@
   <!-- Title right next to the logo -->
   <h1 style="margin: 0; margin-right: 50px; font-size: 20px;">CSE Grader Management Portal</h1>
   <% if user_signed_in? %>
-        <%= link_to "Home", root_path, class: "nav-button nav-item" %>
-        <%= link_to "Profile", edit_user_registration_path, class: "nav-item" %>
-        <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary nav-item" %>
+        <%= link_to "Home", root_path, class: "nav-item nav-item-custom" %>
+        <%= link_to "Profile", edit_user_registration_path, class: "nav-item nav-item-custom" %>
+        <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "nav-item nav-item-custom" %>
       <% end %>
 </header>
 
