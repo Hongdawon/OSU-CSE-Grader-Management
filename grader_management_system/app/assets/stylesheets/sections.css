@@ -1,0 +1,53 @@
+/* Main container styling */
+.section-container {
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  margin: 20px auto; 
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 90%; 
+  max-width: 1200px; 
+}
+
+/* Course title styling */
+.section-number {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+/* Course credits badge styling */
+.course-credits {
+  background-color: #4CAF50;
+  color: white;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+
+/* Styling for catalog number, term, campus, and description */
+.section-text,
+.course-title,
+.course-term,
+.course-campus,
+.course-description {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Emphasis for additional text */
+strong {
+  color: #000000;
+  font-weight: bold;
+}
+
+/* Adjust spacing between paragraphs within the course container */
+.course-container p {
+  margin: 8px 0;
+}

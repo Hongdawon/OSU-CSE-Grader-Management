@@ -1,5 +1,6 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: %i[ show edit update destroy ]
+  before_action :require_admin, :only => [:edit, :update, :destroy, :create, :new]
 
   # Rescue from ActiveRecord::RecordNotFound when a section is not found
   rescue_from ActiveRecord::RecordNotFound, with: :section_not_found
@@ -16,6 +17,7 @@ class SectionsController < ApplicationController
   # GET /sections/new
   def new
     @section = Section.new
+    session[:courseId] = params[:courseId]  # Storing courseId in session
     @section.courseId = params[:courseId]
   end
 
@@ -26,7 +28,8 @@ class SectionsController < ApplicationController
   # POST /sections or /sections.json
   def create
     @section = Section.new(section_params)
-
+    @section.courseId = session[:courseId]  # Retrieving courseId from session
+    
     respond_to do |format|
       if @section.save
         format.html { redirect_to @section, notice: "Section was successfully created." }
@@ -75,5 +78,13 @@ class SectionsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def section_params
       params.require(:section).permit(:courseId, :sectionNumber, :instructionMode, :location, :startTime, :endTime, :startDate, :endDate, :meetingDays, :instructorName)
+    end
+
+    def require_admin
+      unless current_user.admin?
+        flash[:notice] = "You don't have access to this action"
+        redirect_to courses_path
+        return false
+      end
     end
 end

@@ -6,10 +6,12 @@
 
 <div id="sections">
   <% @sections.each do |section| %>
-    <%= render section %>
-    <p>
-      <%= link_to "Show this section", section %>
-    </p>
+    <div class="section-container">
+      <%= render section %>
+      <p>
+        <%= link_to "Show this section", section %>
+      </p>
+    </div>
   <% end %>
 </div>
 

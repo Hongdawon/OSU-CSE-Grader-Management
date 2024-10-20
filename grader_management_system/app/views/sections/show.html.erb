@@ -3,8 +3,11 @@
 <%= render @section %>
 
 <div>
+<% if current_user.admin? %>
   <%= link_to "Edit this section", edit_section_path(@section) %> |
-  <%= link_to "Back to sections", sections_path %>
-
+<% end %>
+  <%= link_to "Back to courses", course_path %>
+<% if current_user.admin? %>
   <%= button_to "Destroy this section", @section, method: :delete %>
+  <% end %>
 </div>

@@ -1,52 +1,39 @@
+<%= stylesheet_link_tag 'sections', media: 'all' %>
+  
 <div id="<%= dom_id section %>">
-  <p>
-    <strong>Courseid:</strong>
-    <%= section.courseId %>
-  </p>
 
-  <p>
-    <strong>Sectionnumber:</strong>
+  <p class="section-number">Lecture Section
     <%= section.sectionNumber %>
   </p>
 
-  <p>
-    <strong>Instructionmode:</strong>
+  <p class="section-text">
     <%= section.instructionMode %>
   </p>
 
-  <p>
-    <strong>Location:</strong>
+  <p class="section-text">
     <%= section.location %>
   </p>
 
-  <p>
-    <strong>Starttime:</strong>
+  <p class="section-text">
     <%= section.startTime %>
-  </p>
-
-  <p>
-    <strong>Endtime:</strong>
+    -
     <%= section.endTime %>
   </p>
 
-  <p>
-    <strong>Startdate:</strong>
-    <%= section.startDate %>
-  </p>
-
-  <p>
-    <strong>Enddate:</strong>
-    <%= section.endDate %>
-  </p>
-
-  <p>
-    <strong>Meetingdays:</strong>
+  <p class="section-text">
     <%= section.meetingDays %>
   </p>
 
-  <p>
-    <strong>Instructorname:</strong>
+  <p class="section-text">
+    <%= section.endDate %>
+    -
+    <%= section.startDate %>
+  </p>
+
+  <p class="section-text">
+    Instructor:
     <%= section.instructorName %>
   </p>
 
 </div>
+
