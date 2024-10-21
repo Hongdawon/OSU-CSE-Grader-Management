@@ -53,3 +53,31 @@
     margin: 8px 0;
   }
   
+  .footer {
+    margin-bottom: 70px;
+  }
+
+
+  .pagination-container {
+    text-align: center; /* Centers the navigation links */
+  }
+  
+  .pagination-container nav {
+    display: inline-block; /* Makes the pagination nav take only as much space as needed */
+  }
+
+  .pagination-container a {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px;
+    margin: 0px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .pagination-container a.current {
+    background-color: #78ca8b;
+  }
+
