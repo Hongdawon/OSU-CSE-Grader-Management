@@ -35,7 +35,7 @@ The Grader Management System is a Ruby on Rails application designed to streamli
    rails db:migrate
    rails db:seed
    ```
-   This will also set up the default admin account with the necessary credentials.
+   This will also set up the default admin account which is admin.1@osu.edu with the necessary credentials.
 
 6. **Start the Rails Server**:
    Finally, launch the server to verify that the application works:
