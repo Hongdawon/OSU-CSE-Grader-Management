@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   ROLES = %w[student instructor admin]
 
+  validates :email, format: { with: /\A[a-zA-Z]+\.\d+@osu\.edu\z/i, message: "must be a valid email address in the format name.number@osu.edu" }
+
+
   before_create :set_default_approval
 
   def set_default_approval
